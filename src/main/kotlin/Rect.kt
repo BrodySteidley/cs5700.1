@@ -4,7 +4,7 @@ import kotlin.arrayOf
 
 open class Rect(topLeft : Point, bottomRight : Point) : Shape()
 {
-	override var points : Array<Point> = arrayOf<Point>(topLeft, bottomRight);
+	override var points : Array<Point> = arrayOf<Point>(topLeft.clone(), bottomRight.clone());
 
 	init
 	{
@@ -14,12 +14,12 @@ open class Rect(topLeft : Point, bottomRight : Point) : Shape()
 
 	fun getTopLeftPoint() : Point
 	{
-		return points[0];
+		return points[0].clone();
 	}
 	
 	fun getBottomRightPoint() : Point
 	{
-		return points[1];
+		return points[1].clone();
 	}
 
 	override fun getArea() : Double

@@ -21,20 +21,22 @@ class CircleTest {
 		/* test get radii and midpoint */
 		assertEquals(2.0, circle.getHorizontalRadius());
 		assertEquals(2.0, circle.getVerticalRadius());
-		assertEquals(midpoint, circle.getMidpoint());
+		assertEquals(midpoint.getX(), circle.getMidpoint().getX());
+		assertEquals(midpoint.getY(), circle.getMidpoint().getY());
 	
 		/* test getArea */
 		assertEquals(PI * 4.0, circle.getArea());
 		
 		/* test shape points */
 		assertEquals(1, circle.getPointCount());
-		assertEquals(midpoint, circle.getPoint(0));
+		assertEquals(midpoint.getX(), circle.getPoint(0)?.getX());
+		assertEquals(midpoint.getY(), circle.getPoint(0)?.getY());
 		assertEquals(null, circle.getPoint(1));
 		assertEquals(null, circle.getPoint(-1));
 		
 		/* test move */
 		circle.move(5.0, 5.0)
-		assertEquals(10.0, midpoint.getX());
-		assertEquals(15.0, midpoint.getY());
+		assertEquals(10.0, circle.getMidpoint().getX());
+		assertEquals(15.0, circle.getMidpoint().getY());
     }
 }

@@ -12,7 +12,7 @@ abstract class Shape
 	{
 		if (index < 0 || index >= points.size)
 			return null;
-		return points[index];
+		return points[index].clone();
 	}
 
 	fun move(deltaX : Double, deltaY : Double)

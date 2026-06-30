@@ -15,23 +15,25 @@ class LineTest {
 		val line : Line = Line(point1, point2);
 
 		/* test getting endpoints */
-		assertEquals(point1, line.getEndpointA());
-		assertEquals(point2, line.getEndpointB());
+		assertEquals(point1.getX(), line.getEndpointA().getX());
+		assertEquals(point1.getY(), line.getEndpointA().getY());
+		assertEquals(point2.getX(), line.getEndpointB().getX());
+		assertEquals(point2.getY(), line.getEndpointB().getY());
 
 		/* test length */
 		assertEquals(3.0, line.getLength());
 
 		/* test move */;
 		line.move(4.0, -17.0);
-		assertEquals(4.0, point1.getX());
-		assertEquals(-17.0, point1.getY());
-		assertEquals(7.0, point2.getX());
-		assertEquals(-17.0, point2.getY());
+		assertEquals(4.0, line.getEndpointA().getX());
+		assertEquals(-17.0, line.getEndpointA().getY());
+		assertEquals(7.0, line.getEndpointB().getX());
+		assertEquals(-17.0, line.getEndpointB().getY());
 
 		/* test getSlope */
 		assertEquals(0.0, line.getSlope());
-		point2.move(0.0, 3.0);
-		assertEquals(1.0, line.getSlope());
+		val line2 : Line = Line(Point(0.0, 0.0), Point(1.0, 3.0));
+		assertEquals(3.0, line2.getSlope());
     }
 
 	@Test

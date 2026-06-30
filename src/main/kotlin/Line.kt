@@ -8,21 +8,22 @@ class Line (
 	private var endpointB : Point
 )
 {
+	init
+	{
+		require(!(endpointA.getX() == endpointB.getX() && endpointA.getY() == endpointB.getY()))
+		{ "Line must not have a length of 0." }
+		endpointA = endpointA.clone();
+		endpointB = endpointB.clone()
+	}
 
 	fun getEndpointA() : Point
 	{
-		return endpointA;
+		return endpointA.clone();
 	}
 	
 	fun getEndpointB() : Point
 	{
-		return endpointB;
-	}
-
-	init 
-	{
-		require(!(endpointA.getX() == endpointB.getX() && endpointA.getY() == endpointB.getY()))
-			{ "Line must not have a length of 0." }
+		return endpointB.clone();
 	}
 
 	fun getSlope() : Double

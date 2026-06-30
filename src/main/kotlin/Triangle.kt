@@ -3,7 +3,7 @@ import kotlin.math.abs
 
 class Triangle(pointA : Point, pointB : Point, pointC : Point) : Shape()
 {
-	override var points : Array<Point> = arrayOf<Point>(pointA, pointB, pointC);
+	override var points : Array<Point> = arrayOf<Point>(pointA.clone(), pointB.clone(), pointC.clone());
 	
 	init
 	{

@@ -8,7 +8,7 @@ open class Ellipse(
 	private var verticalRadius : Double
 	) : Shape()
 {
-	override var points : Array<Point> = arrayOf<Point>(midpoint);
+	override var points : Array<Point> = arrayOf<Point>(midpoint.clone());
 
 	init
 	{
@@ -28,7 +28,7 @@ open class Ellipse(
 
 	fun getMidpoint() : Point
 	{
-		return points[0];
+		return points[0].clone();
 	}
 
 	override fun getArea() : Double

@@ -20,19 +20,22 @@ class TriangleTest {
 
 		/* test shape points */
 		assertEquals(3, triangle.getPointCount());
-		assertEquals(pointA, triangle.getPoint(0));
-		assertEquals(pointB, triangle.getPoint(1));
-		assertEquals(pointC, triangle.getPoint(2));
+		assertEquals(pointA.getX(), triangle.getPoint(0)?.getX());
+		assertEquals(pointA.getY(), triangle.getPoint(0)?.getY());
+		assertEquals(pointB.getX(), triangle.getPoint(1)?.getX());
+		assertEquals(pointB.getY(), triangle.getPoint(1)?.getY());
+		assertEquals(pointC.getX(), triangle.getPoint(2)?.getX());
+		assertEquals(pointC.getY(), triangle.getPoint(2)?.getY());
 		assertEquals(null, triangle.getPoint(3));
 		assertEquals(null, triangle.getPoint(-1));
 
 		/* test move */
 		triangle.move(5.0, -5.0)
-		assertEquals(15.0, pointA.getX());
-		assertEquals(-5.0, pointA.getY());
-		assertEquals(5.0, pointB.getX());
-		assertEquals(-5.0, pointB.getY());
-		assertEquals(5.0, pointC.getX());
-		assertEquals(5.0, pointC.getY());
+		assertEquals(15.0, triangle.getPoint(0)?.getX());
+		assertEquals(-5.0, triangle.getPoint(0)?.getY());
+		assertEquals(5.0, triangle.getPoint(1)?.getX());
+		assertEquals(-5.0, triangle.getPoint(1)?.getY());
+		assertEquals(5.0, triangle.getPoint(2)?.getX());
+		assertEquals(5.0, triangle.getPoint(2)?.getY());
     }
 }
