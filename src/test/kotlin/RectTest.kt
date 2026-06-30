@@ -8,6 +8,12 @@ class RectTest {
 		assertThrows<IllegalArgumentException>{
 			val rect = Rect(Point(1.0, 1.0), Point(1.0, 1.0))
 		};
+		assertThrows<IllegalArgumentException>{
+			val rect = Rect(Point(1.0, 1.0), Point(1.0, 2.0))
+		};
+		assertThrows<IllegalArgumentException>{
+			val rect = Rect(Point(1.0, 1.0), Point(2.0, 1.0))
+		};
 
 		val tlpoint = Point(0.0, 0.0);
 		val brpoint = Point(7.0, 4.0);

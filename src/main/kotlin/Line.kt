@@ -31,7 +31,7 @@ class Line (
 		if (endpointB.getX() == endpointA.getX())
 			return Double.NaN;
 		/* rise over run; (y2 - y1) / (x2 - x1) */
-		return abs(endpointB.getY() - endpointA.getY()) / (endpointB.getX() - endpointA.getX());
+		return (endpointB.getY() - endpointA.getY()) / (endpointB.getX() - endpointA.getX());
 	}
 
 	fun getLength() : Double

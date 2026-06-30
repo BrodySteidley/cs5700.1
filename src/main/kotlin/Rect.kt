@@ -8,7 +8,7 @@ open class Rect(topLeft : Point, bottomRight : Point) : Shape()
 
 	init
 	{
-		require(!(topLeft.getX() == bottomRight.getX() && topLeft.getY() == bottomRight.getY()))
+		require(!(topLeft.getX() == bottomRight.getX() || topLeft.getY() == bottomRight.getY()))
 			{ "Rect must not have an area of zero." }
 	}
 
