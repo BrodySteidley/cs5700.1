@@ -1,10 +1,3 @@
 
-class Square(topLeft : Point, bottomRight : Point) : Rect(topLeft, bottomRight)
-{
-	init
-	{
-		require((bottomRight.getX() - topLeft.getX()) == (bottomRight.getY() - topLeft.getY()))
-			{ "Square can not have unequal sides." }
-	}
-}
+class Square(topLeft : Point, size : Double) : Rect(topLeft, Point(topLeft.getX() + size, topLeft.getY() + size))
 
