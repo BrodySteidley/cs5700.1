@@ -7,7 +7,7 @@ class TriangleTest {
     fun testTriangle() {
 		/* test triangle throws error on invalid area */
 		assertThrows<IllegalArgumentException> {
-			var triangle2 : Triangle = Triangle(Point(0.0, 0.0), Point(1.0, 0.0), Point(2.0, 0.0));
+			val triangle2 : Triangle = Triangle(Point(0.0, 0.0), Point(1.0, 0.0), Point(2.0, 0.0));
 		};
 
 		val pointA = Point(10.0, 0.0);

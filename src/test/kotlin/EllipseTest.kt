@@ -10,13 +10,13 @@ class EllipseTest {
 		
 	/* test ellipse throws error on invalid area */
 	assertThrows<IllegalArgumentException> {
-		var ellipse2 : Ellipse = Ellipse(midpoint, 4.0, 0.0)
+		val ellipse2 : Ellipse = Ellipse(midpoint, 4.0, 0.0)
 	};
 	assertThrows<IllegalArgumentException> {
-		var ellipse3 : Ellipse = Ellipse(midpoint, -2.0, 17.0)
+		val ellipse3 : Ellipse = Ellipse(midpoint, -2.0, 17.0)
 	};
         
-	var ellipse : Ellipse = Ellipse(midpoint, 2.0, 6.0)
+	val ellipse : Ellipse = Ellipse(midpoint, 2.0, 6.0)
 
 	/* test get radii and midpoint */
 	assertEquals(2.0, ellipse.getHorizontalRadius());

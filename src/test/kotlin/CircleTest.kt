@@ -10,13 +10,13 @@ class CircleTest {
 			
 		/* test circle throws error on invalid area */
 		assertThrows<IllegalArgumentException> {
-			var circle2 : Circle = Circle(midpoint, 0.0)
+			val circle2 : Circle = Circle(midpoint, 0.0)
 		};
 		assertThrows<IllegalArgumentException> {
-			var circle3 : Circle = Circle(midpoint, -2.0)
+			val circle3 : Circle = Circle(midpoint, -2.0)
 		};
 			
-		var circle : Circle = Circle(midpoint, 2.0)
+		val circle : Circle = Circle(midpoint, 2.0)
 	
 		/* test get radii and midpoint */
 		assertEquals(2.0, circle.getHorizontalRadius());
