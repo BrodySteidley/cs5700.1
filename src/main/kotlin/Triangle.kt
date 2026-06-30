@@ -3,7 +3,7 @@ import kotlin.math.abs
 
 class Triangle(pointA : Point, pointB : Point, pointC : Point) : Shape()
 {
-	override var points : Array<Point> = arrayOf<Point>(pointA, pointB, pointC)	
+	override var points : Array<Point> = arrayOf<Point>(pointA, pointB, pointC);
 	
 	init
 	{
@@ -16,7 +16,7 @@ class Triangle(pointA : Point, pointB : Point, pointC : Point) : Shape()
 			points[0].getX() * (points[1].getY() - points[2].getY()) +
 			points[1].getX() * (points[2].getY() - points[0].getY()) +
 			points[2].getX() * (points[0].getY() - points[1].getY())
-		)
+		);
 	}
 }
 

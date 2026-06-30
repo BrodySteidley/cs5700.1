@@ -4,6 +4,12 @@ class Point (
 	private var y : Double
 )
 {
+	init 
+	{
+		require(x.isFinite()) { "x must be a finite value." }
+		require(y.isFinite()) { "y must be a finite value." }
+	}
+
 	fun getX() : Double
 	{
 		return x;
