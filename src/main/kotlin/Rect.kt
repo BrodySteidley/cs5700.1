@@ -2,7 +2,7 @@ import kotlin.math.abs
 import kotlin.arrayOf
 
 open class Rect(topLeft: Point, bottomRight: Point) : Shape() {
-    override var points: Array<Point> = arrayOf<Point>(topLeft.clone(), bottomRight.clone())
+    override val points: Array<Point> = arrayOf<Point>(topLeft.clone(), bottomRight.clone())
 
     init {
         require(!(topLeft.getX() == bottomRight.getX() || topLeft.getY() == bottomRight.getY()))

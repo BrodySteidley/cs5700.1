@@ -2,43 +2,36 @@ import kotlin.math.abs
 import kotlin.math.sqrt
 import kotlin.math.pow
 
-class Line(
-    private var endpointA: Point,
-    private var endpointB: Point
-) {
+class Line(endpointA: Point, endpointB: Point) : PointCollection() {
+	
+    override val points: Array<Point> = arrayOf<Point>(endpointA.clone(), endpointB.clone())
+
     init {
         require(!(endpointA.getX() == endpointB.getX() && endpointA.getY() == endpointB.getY()))
         { "Line must not have a length of 0." }
-        endpointA = endpointA.clone()
-        endpointB = endpointB.clone()
     }
 
     fun getEndpointA(): Point {
-        return endpointA.clone()
+        return points[0].clone()
     }
 
     fun getEndpointB(): Point {
-        return endpointB.clone()
+        return points[1].clone()
     }
 
     fun getSlope(): Double {
-        if (endpointB.getX() == endpointA.getX())
+        if (points[1].getX() == points[0].getX())
             return Double.NaN
         /* rise over run; (y2 - y1) / (x2 - x1) */
-        return (endpointB.getY() - endpointA.getY()) / (endpointB.getX() - endpointA.getX())
+        return (points[1].getY() - points[0].getY()) / (points[1].getX() - points[0].getX())
     }
 
     fun getLength(): Double {
         /* sqrt((x2 - x1)^2 + (y2 - y2)^2) */
         return sqrt(
-            (endpointB.getX() - endpointA.getX()).pow(2) +
-                    (endpointB.getY() - endpointA.getY()).pow(2)
+            (points[1].getX() - points[0].getX()).pow(2) +
+                    (points[1].getY() - points[0].getY()).pow(2)
         )
-    }
-
-    fun move(deltaX: Double, deltaY: Double) {
-        endpointA.move(deltaX, deltaY)
-        endpointB.move(deltaX, deltaY)
     }
 }
 

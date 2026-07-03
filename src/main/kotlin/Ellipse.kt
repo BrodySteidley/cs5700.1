@@ -6,7 +6,7 @@ open class Ellipse(
     private var horizontalRadius: Double,
     private var verticalRadius: Double
 ) : Shape() {
-    override var points: Array<Point> = arrayOf<Point>(midpoint.clone())
+    override val points: Array<Point> = arrayOf<Point>(midpoint.clone())
 
     init {
         require(horizontalRadius > 0 && verticalRadius > 0)
