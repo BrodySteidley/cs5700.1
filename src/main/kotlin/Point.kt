@@ -1,7 +1,7 @@
 class Point(
     private var x: Double,
     private var y: Double
-) {
+) : Movable {
     init {
         require(x.isFinite()) { "x must be a finite value." }
         require(y.isFinite()) { "y must be a finite value." }
@@ -19,7 +19,7 @@ class Point(
         return Point(this.x, this.y)
     }
 
-    fun move(deltaX: Double, deltaY: Double) {
+    override fun move(deltaX: Double, deltaY: Double) {
         this.x += deltaX
         this.y += deltaY
     }

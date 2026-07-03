@@ -5,7 +5,7 @@ import kotlin.math.PI
 
 class CircleTest {
     @Test
-    fun testEllipse() {
+    fun testCircle() {
         val midpoint: Point = Point(5.0, 10.0)
 
         /* test circle throws error on invalid area */

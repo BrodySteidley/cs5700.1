@@ -1,4 +1,4 @@
-abstract class PointCollection {
+abstract class PointCollection : Movable {
     abstract val points: Array<Point>
 
     fun getPointCount(): Int {
@@ -11,7 +11,7 @@ abstract class PointCollection {
         return points[index].clone()
     }
 
-    fun move(deltaX: Double, deltaY: Double) {
+    override fun move(deltaX: Double, deltaY: Double) {
         for (point: Point in points)
             point.move(deltaX, deltaY)
     }
