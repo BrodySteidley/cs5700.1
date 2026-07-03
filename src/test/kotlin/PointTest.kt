@@ -5,11 +5,11 @@ import org.junit.jupiter.api.assertThrows
 class PointTest {
     @Test
     fun testPoint() {
-        val point : Point = Point(5.0, 10.0)
+        val point: Point = Point(5.0, 10.0)
         assertEquals(5.0, point.getX())
         assertEquals(10.0, point.getY())
 
-        val point2 : Point = point.clone();
+        val point2: Point = point.clone()
         assertEquals(point.getX(), point2.getX())
         assertEquals(point.getY(), point2.getY())
 
@@ -18,10 +18,10 @@ class PointTest {
         assertEquals(point2.getY() + 5.0, point.getY())
 
 
-        assertThrows<IllegalArgumentException>{
+        assertThrows<IllegalArgumentException> {
             val point3 = Point(Double.POSITIVE_INFINITY, 0.0)
         }
-        assertThrows<IllegalArgumentException>{
+        assertThrows<IllegalArgumentException> {
             val point4 = Point(0.0, Double.NaN)
         }
     }
